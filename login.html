@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sign in — Student Hub</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>"
+        />
+    </head>
+    <body>
+        <nav>
+            <a href="login.html" class="brand">🎓 Student Hub</a>
+            <div class="nav-links">
+                <a href="login.html">Sign in</a>
+                <a href="signup.html">Sign up</a>
+            </div>
+        </nav>
+        <main>
+            <div class="card">
+                <h1>Welcome back</h1>
+                <p class="subtitle">Sign in to your Student Hub account</p>
+
+                <form action="">
+                    <div class="field">
+                        <label for="username">Username</label>
+                        <input
+                            type="text"
+                            name="username"
+                            id="username"
+                            autofocus
+                            placeholder="Enter your username"
+                        />
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="Enter your password"
+                        />
+                        <span class="error-message"></span>
+                    </div>
+                    <button type="submit" class="btn-primary">Sign in</button>
+                </form>
+                <p class="card-footer">
+                    No account? <a href="signup.html">Sign up</a>
+                </p>
+            </div>
+        </main>
+        <footer>
+            <p>© 2026 Student Hub</p>
+            <p><a href="#">Terms</a> · <a href="#">Privacy</a></p>
+        </footer>
+    </body>
+</html>

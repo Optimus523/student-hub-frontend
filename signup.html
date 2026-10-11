@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sign up — Student Hub</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>"
+        />
+    </head>
+    <body>
+        <nav>
+            <a href="login.html" class="brand">🎓 Student Hub</a>
+            <div class="nav-links">
+                <a href="login.html">Sign in</a>
+                <a href="signup.html">Sign up</a>
+            </div>
+        </nav>
+
+        <main>
+            <div class="card">
+                <h1>Create your account</h1>
+                <p class="subtitle">Join Student Hub to get started</p>
+
+                <form>
+                    <div class="field">
+                        <label for="username">Username</label>
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            autofocus
+                            placeholder="Enter your username"
+                        />
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                        />
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="confirm-password">Confirm password</label>
+                        <input
+                            type="password"
+                            id="confirm-password"
+                            name="confirm_password"
+                            placeholder="Confirm password"
+                        />
+                        <span class="error-message"></span>
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        Create account
+                    </button>
+                </form>
+
+                <p class="card-footer">
+                    Already have an account? <a href="login.html">Sign in</a>
+                </p>
+            </div>
+        </main>
+        <footer>
+            <p>© 2026 Student Hub</p>
+            <p><a href="#">Terms</a> · <a href="#">Privacy</a></p>
+        </footer>
+    </body>
+</html>
