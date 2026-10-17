@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home — Student Hub</title>
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>"
+        />
+        <link rel="stylesheet" href="css/dashboard.css" />
+    </head>
+    <body>
+        <body>
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Toggle menu"
+            >
+                ☰
+            </button>
+            <div class="sidebar-overlay" id="sidebarOverlay"></div>
+            <aside class="sidebar">
+                <div class="sidebar-brand">
+                    <a href="home.html" class="brand">🎓 Student Hub</a>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <div class="nav-section">
+                        <p class="nav-section-label">Main</p>
+                        <a href="home.html" class="nav-link active">🏠 Home</a>
+                        <a href="#" class="nav-link">📢 Announcements</a>
+                        <a href="#" class="nav-link">📅 Timetable</a>
+                        <a href="#" class="nav-link">📝 Deadlines</a>
+                        <a href="#" class="nav-link">📚 Materials</a>
+                        <a href="#" class="nav-link">📊 Grades</a>
+                    </div>
+
+                    <div class="nav-section">
+                        <p class="nav-section-label">Admin</p>
+                        <a href="#" class="nav-link">💰 Fees</a>
+                        <a href="#" class="nav-link">📝 Registration</a>
+                    </div>
+
+                    <div class="nav-section">
+                        <p class="nav-section-label">Social</p>
+                        <a href="#" class="nav-link">💬 Messages</a>
+                        <a href="#" class="nav-link">👥 Study Groups</a>
+                        <a href="#" class="nav-link">🎙️ Voice Rooms</a>
+                    </div>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="user-info">
+                        <div class="user-avatar">E</div>
+                        <div class="user-details">
+                            <p class="user-name">Edwin</p>
+                            <a href="login.html" class="logout-link">Log out</a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="content">
+                <header class="content-header">
+                    <h1>Welcome back, Edwin</h1>
+                    <p class="content-subtitle">
+                        Here's what's happening today
+                    </p>
+                </header>
+
+                <div class="dashboard">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon">📅</span>
+                            <h2 class="card-title">Timetable</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>CS201 — 9:00 AM</p>
+                            <p>CS301 — 11:00 AM</p>
+                            <p>CS401 — 2:00 PM</p>
+                        </div>
+                        <a href="#" class="card-link">View all →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon">📢</span>
+                            <h2 class="card-title">Announcements</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>Exam timetable released</p>
+                            <p>Fees deadline extended</p>
+                        </div>
+                        <a href="#" class="card-link">View all →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon">⏰</span>
+                            <h2 class="card-title">Deadlines</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>Lab 3 — due Friday</p>
+                            <p>Essay — due Sunday</p>
+                        </div>
+                        <a href="#" class="card-link">View all →</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon">💰</span>
+                            <h2 class="card-title">Fees</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>Balance: UGX 12,000</p>
+                            <p>Due: Oct 30</p>
+                        </div>
+                        <a href="#" class="card-link">View all →</a>
+                    </div>
+                </div>
+            </main>
+        </body>
+        <script src="js/dashboard.js"></script>
+    </body>
+</html>
