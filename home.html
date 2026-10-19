@@ -11,116 +11,224 @@
         <link rel="stylesheet" href="css/dashboard.css" />
     </head>
     <body>
-        <body>
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Toggle menu"
-            >
-                ☰
-            </button>
-            <div class="sidebar-overlay" id="sidebarOverlay"></div>
-            <aside class="sidebar">
-                <div class="sidebar-brand">
-                    <a href="home.html" class="brand">🎓 Student Hub</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            ☰
+        </button>
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <a href="home.html" class="brand">🎓 Student Hub</a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <p class="nav-section-label">Main</p>
+                    <a href="home.html" class="nav-link active">🏠 Home</a>
+                    <a href="announcements.html" class="nav-link"
+                        >📢 Announcements</a
+                    >
+                    <a
+                        href="coming-soon.html?feature=timetable"
+                        class="nav-link"
+                        >📅 Timetable</a
+                    >
+                    <a href="assignments.html" class="nav-link">📝 Deadlines</a>
+                    <a
+                        href="coming-soon.html?feature=materials"
+                        class="nav-link"
+                        >📚 Materials</a
+                    >
+                    <a href="coming-soon.html?feature=grades" class="nav-link"
+                        >📊 Grades</a
+                    >
                 </div>
 
-                <nav class="sidebar-nav">
-                    <div class="nav-section">
-                        <p class="nav-section-label">Main</p>
-                        <a href="home.html" class="nav-link active">🏠 Home</a>
-                        <a href="#" class="nav-link">📢 Announcements</a>
-                        <a href="#" class="nav-link">📅 Timetable</a>
-                        <a href="#" class="nav-link">📝 Deadlines</a>
-                        <a href="#" class="nav-link">📚 Materials</a>
-                        <a href="#" class="nav-link">📊 Grades</a>
-                    </div>
-
-                    <div class="nav-section">
-                        <p class="nav-section-label">Admin</p>
-                        <a href="#" class="nav-link">💰 Fees</a>
-                        <a href="#" class="nav-link">📝 Registration</a>
-                    </div>
-
-                    <div class="nav-section">
-                        <p class="nav-section-label">Social</p>
-                        <a href="#" class="nav-link">💬 Messages</a>
-                        <a href="#" class="nav-link">👥 Study Groups</a>
-                        <a href="#" class="nav-link">🎙️ Voice Rooms</a>
-                    </div>
-                </nav>
-
-                <div class="sidebar-footer">
-                    <div class="user-info">
-                        <div class="user-avatar">E</div>
-                        <div class="user-details">
-                            <p class="user-name">Edwin</p>
-                            <a href="login.html" class="logout-link">Log out</a>
-                        </div>
-                    </div>
+                <div class="nav-section">
+                    <p class="nav-section-label">Admin</p>
+                    <a href="coming-soon.html?feature=fees" class="nav-link"
+                        >💰 Fees</a
+                    >
+                    <a
+                        href="coming-soon.html?feature=registration"
+                        class="nav-link"
+                        >📝 Registration</a
+                    >
                 </div>
-            </aside>
 
-            <main class="content">
-                <header class="content-header">
-                    <h1>Welcome back, Edwin</h1>
-                    <p class="content-subtitle">
+                <div class="nav-section">
+                    <p class="nav-section-label">Social</p>
+                    <a href="coming-soon.html?feature=messages" class="nav-link"
+                        >💬 Messages</a
+                    >
+                    <a
+                        href="coming-soon.html?feature=study-groups"
+                        class="nav-link"
+                        >👥 Study Groups</a
+                    >
+                    <a
+                        href="coming-soon.html?feature=voice-rooms"
+                        class="nav-link"
+                        >🎙️ Voice Rooms</a
+                    >
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="profile.html" class="user-info user-info-link">
+                    <div class="user-avatar" id="userAvatar">?</div>
+                    <div class="user-details">
+                        <p class="user-name" id="userName">Student</p>
+                        <span class="logout-link">View profile</span>
+                    </div>
+                </a>
+                <button id="logoutBtn" class="logout-link logout-btn">
+                    Log out
+                </button>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="content-header">
+                <div>
+                    <h1 id="welcomeHeading">Welcome back</h1>
+                    <p class="content-subtitle" id="todayDate">
                         Here's what's happening today
                     </p>
-                </header>
+                </div>
+            </header>
 
-                <div class="dashboard">
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="card-icon">📅</span>
-                            <h2 class="card-title">Timetable</h2>
-                        </div>
-                        <div class="card-body">
-                            <p>CS201 — 9:00 AM</p>
-                            <p>CS301 — 11:00 AM</p>
-                            <p>CS401 — 2:00 PM</p>
-                        </div>
-                        <a href="#" class="card-link">View all →</a>
+            <section class="stats-grid">
+                <div class="stat-card" data-stat="assignments">
+                    <span class="stat-label">Due this week</span>
+                    <span class="stat-value">—</span>
+                    <span class="stat-meta">Across all courses</span>
+                </div>
+                <div class="stat-card" data-stat="announcements">
+                    <span class="stat-label">Total announcements</span>
+                    <span class="stat-value">—</span>
+                    <span class="stat-meta">Across all courses</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Enrolled courses</span>
+                    <span class="stat-value">4</span>
+                    <span class="stat-meta">Semester 1, 2026/27</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Mid-semester tests</span>
+                    <span class="stat-value">2 Nov</span>
+                    <span class="stat-meta">Timetable published</span>
+                </div>
+            </section>
+
+            <div class="dashboard">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-icon">📅</span>
+                        <h2 class="card-title">Timetable</h2>
                     </div>
+                    <ul class="item-list">
+                        <li class="list-item">
+                            <div class="date-block">
+                                <span class="date-day">20</span>
+                                <span class="date-month">OCT</span>
+                            </div>
+                            <div class="item-body">
+                                <p class="item-title">
+                                    CS201 — Data Structures
+                                </p>
+                                <p class="item-meta">09:00 AM · Block B</p>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <div class="date-block">
+                                <span class="date-day">20</span>
+                                <span class="date-month">OCT</span>
+                            </div>
+                            <div class="item-body">
+                                <p class="item-title">CS301 — Algorithms</p>
+                                <p class="item-meta">11:00 AM · Block A</p>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <div class="date-block">
+                                <span class="date-day">20</span>
+                                <span class="date-month">OCT</span>
+                            </div>
+                            <div class="item-body">
+                                <p class="item-title">
+                                    CS401 — Machine Learning
+                                </p>
+                                <p class="item-meta">02:00 PM · Block C</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <a
+                        href="coming-soon.html?feature=timetable"
+                        class="card-link"
+                        >View all →</a
+                    >
+                </div>
 
-                    <div class="card">
-                        <div class="card-header">
+                <div class="card card-wide">
+                    <div class="card-header ann-card-header">
+                        <div class="ann-title-group">
                             <span class="card-icon">📢</span>
                             <h2 class="card-title">Announcements</h2>
                         </div>
-                        <div class="card-body">
-                            <p>Exam timetable released</p>
-                            <p>Fees deadline extended</p>
-                        </div>
-                        <a href="#" class="card-link">View all →</a>
+                        <a
+                            href="announcements.html"
+                            class="card-link"
+                            style="margin: 0"
+                            >View all →</a
+                        >
                     </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="card-icon">⏰</span>
-                            <h2 class="card-title">Deadlines</h2>
-                        </div>
-                        <div class="card-body">
-                            <p>Lab 3 — due Friday</p>
-                            <p>Essay — due Sunday</p>
-                        </div>
-                        <a href="#" class="card-link">View all →</a>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="card-icon">💰</span>
-                            <h2 class="card-title">Fees</h2>
-                        </div>
-                        <div class="card-body">
-                            <p>Balance: UGX 12,000</p>
-                            <p>Due: Oct 30</p>
-                        </div>
-                        <a href="#" class="card-link">View all →</a>
-                    </div>
+                    <ul class="announcements" id="announcementsFeed">
+                        <li
+                            class="announcement"
+                            style="color: #6b7280; font-size: 0.9rem"
+                        >
+                            Loading announcements...
+                        </li>
+                    </ul>
                 </div>
-            </main>
-        </body>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-icon">⏰</span>
+                        <h2 class="card-title">Deadlines</h2>
+                    </div>
+                    <ul class="item-list" id="deadlinesFeed">
+                        <li
+                            class="list-item"
+                            style="color: #6b7280; font-size: 0.85rem"
+                        >
+                            Loading...
+                        </li>
+                    </ul>
+                    <a href="assignments.html" class="card-link">View all →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-icon">💰</span>
+                        <h2 class="card-title">Fees</h2>
+                    </div>
+                    <div class="fees-body">
+                        <p class="fees-amount">UGX 12,000</p>
+                        <p class="fees-note">Balance due Oct 30</p>
+                        <div class="progress">
+                            <div class="progress-fill" style="width: 60%"></div>
+                        </div>
+                        <p class="progress-label">60% paid</p>
+                    </div>
+                    <a href="coming-soon.html?feature=fees" class="card-link"
+                        >View all →</a
+                    >
+                </div>
+            </div>
+        </main>
+
         <script src="js/dashboard.js"></script>
     </body>
 </html>

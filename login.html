@@ -11,26 +11,30 @@
         />
     </head>
     <body>
-        <nav>
-            <a href="login.html" class="brand">🎓 Student Hub</a>
-            <div class="nav-links">
-                <a href="login.html">Sign in</a>
-                <a href="signup.html">Sign up</a>
-            </div>
-        </nav>
         <main>
             <div class="card">
-                <div id="form-message" class="form-message" hidden></div>
+                <div class="auth-brand">
+                    <span class="brand-logo" aria-hidden="true">🎓</span>
+                    <span class="brand-name">Student Hub</span>
+                </div>
+
+                <div
+                    id="form-message"
+                    class="form-message"
+                    role="alert"
+                    hidden
+                ></div>
                 <h1>Welcome back</h1>
                 <p class="subtitle">Sign in to your Student Hub account</p>
 
-                <form action="">
+                <form id="login-form" action="" novalidate>
                     <div class="field">
                         <label for="username">Username</label>
                         <input
                             type="text"
                             name="username"
                             id="username"
+                            autocomplete="username"
                             autofocus
                             placeholder="Enter your username"
                         />
@@ -43,6 +47,7 @@
                             type="password"
                             name="password"
                             id="password"
+                            autocomplete="current-password"
                             placeholder="Enter your password"
                         />
                         <span class="error-message"></span>
@@ -58,6 +63,10 @@
             <p>© 2026 Student Hub</p>
             <p><a href="#">Terms</a> · <a href="#">Privacy</a></p>
         </footer>
+        <div id="loading-overlay" class="loading-overlay" hidden>
+            <div class="spinner"></div>
+            <p class="loading-text">Signing in...</p>
+        </div>
         <script src="js/login.js"></script>
     </body>
 </html>

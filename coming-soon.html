@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Coming Soon — Student Hub</title>
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>"
+        />
+        <link rel="stylesheet" href="css/dashboard.css" />
+    </head>
+    <body>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            ☰
+        </button>
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <a href="home.html" class="brand">🎓 Student Hub</a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <p class="nav-section-label">Main</p>
+                    <a href="home.html" class="nav-link">🏠 Home</a>
+                    <a href="announcements.html" class="nav-link"
+                        >📢 Announcements</a
+                    >
+                    <a
+                        href="coming-soon.html?feature=timetable"
+                        class="nav-link"
+                        >📅 Timetable</a
+                    >
+                    <a href="assignments.html" class="nav-link">📝 Deadlines</a>
+                    <a
+                        href="coming-soon.html?feature=materials"
+                        class="nav-link"
+                        >📚 Materials</a
+                    >
+                    <a href="coming-soon.html?feature=grades" class="nav-link"
+                        >📊 Grades</a
+                    >
+                </div>
+
+                <div class="nav-section">
+                    <p class="nav-section-label">Admin</p>
+                    <a href="coming-soon.html?feature=fees" class="nav-link"
+                        >💰 Fees</a
+                    >
+                    <a
+                        href="coming-soon.html?feature=registration"
+                        class="nav-link"
+                        >📝 Registration</a
+                    >
+                </div>
+
+                <div class="nav-section">
+                    <p class="nav-section-label">Social</p>
+                    <a href="coming-soon.html?feature=messages" class="nav-link"
+                        >💬 Messages</a
+                    >
+                    <a
+                        href="coming-soon.html?feature=study-groups"
+                        class="nav-link"
+                        >👥 Study Groups</a
+                    >
+                    <a
+                        href="coming-soon.html?feature=voice-rooms"
+                        class="nav-link"
+                        >🎙️ Voice Rooms</a
+                    >
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="profile.html" class="user-info user-info-link">
+                    <div class="user-avatar" id="userAvatar">?</div>
+                    <div class="user-details">
+                        <p class="user-name" id="userName">Student</p>
+                        <span class="logout-link">View profile</span>
+                    </div>
+                </a>
+                <button id="logoutBtn" class="logout-link logout-btn">
+                    Log out
+                </button>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="coming-soon-wrapper">
+                <div class="coming-soon-card">
+                    <div class="coming-soon-icon" id="featureIcon">🚧</div>
+                    <h1 class="coming-soon-title" id="featureTitle">
+                        Coming Soon
+                    </h1>
+                    <p class="coming-soon-message" id="featureMessage">
+                        We're working hard to bring you this feature.
+                    </p>
+                    <a
+                        href="home.html"
+                        class="btn-primary"
+                        style="
+                            text-decoration: none;
+                            display: inline-block;
+                            margin-top: 1rem;
+                        "
+                    >
+                        ← Back to Dashboard
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <script src="js/dashboard.js"></script>
+        <script>
+            const featureMap = {
+                timetable: {
+                    icon: "📅",
+                    title: "Timetable",
+                    message: "Your class schedule will live here.",
+                },
+                materials: {
+                    icon: "📚",
+                    title: "Materials",
+                    message:
+                        "Lecture notes, slides, and study resources will be available soon.",
+                },
+                grades: {
+                    icon: "📊",
+                    title: "Grades",
+                    message: "Track your performance and results in one place.",
+                },
+                fees: {
+                    icon: "💰",
+                    title: "Fees",
+                    message:
+                        "View your balances, payment history, and deadlines.",
+                },
+                registration: {
+                    icon: "📝",
+                    title: "Registration",
+                    message:
+                        "Course registration and enrollment tools are on the way.",
+                },
+                messages: {
+                    icon: "💬",
+                    title: "Messages",
+                    message:
+                        "Chat with classmates and lecturers directly in the app.",
+                },
+                "study-groups": {
+                    icon: "👥",
+                    title: "Study Groups",
+                    message:
+                        "Form groups, share resources, and prepare together.",
+                },
+                "voice-rooms": {
+                    icon: "🎙️",
+                    title: "Voice Rooms",
+                    message: "Hop into live audio rooms for group discussions.",
+                },
+            };
+
+            const params = new URLSearchParams(window.location.search);
+            const feature = params.get("feature");
+
+            if (feature && featureMap[feature]) {
+                const info = featureMap[feature];
+                document.querySelector("#featureIcon").textContent = info.icon;
+                document.querySelector("#featureTitle").textContent =
+                    `${info.title} — Coming Soon`;
+                document.querySelector("#featureMessage").textContent =
+                    info.message;
+                document.title = `${info.title} — Coming Soon · Student Hub`;
+            }
+        </script>
+    </body>
+</html>

@@ -11,17 +11,19 @@
         />
     </head>
     <body>
-        <nav>
-            <a href="login.html" class="brand">🎓 Student Hub</a>
-            <div class="nav-links">
-                <a href="login.html">Sign in</a>
-                <a href="signup.html">Sign up</a>
-            </div>
-        </nav>
-
         <main>
             <div class="card">
-                <div id="form-message" class="form-message" hidden></div>
+                <div class="auth-brand">
+                    <span class="brand-logo" aria-hidden="true">🎓</span>
+                    <span class="brand-name">Student Hub</span>
+                </div>
+
+                <div
+                    id="form-message"
+                    class="form-message"
+                    role="alert"
+                    hidden
+                ></div>
                 <h1>Create your account</h1>
                 <p class="subtitle">Join Student Hub to get started</p>
 
@@ -32,6 +34,7 @@
                             type="text"
                             id="username"
                             name="username"
+                            autocomplete="username"
                             autofocus
                             placeholder="Enter your username"
                         />
@@ -44,6 +47,7 @@
                             type="password"
                             id="password"
                             name="password"
+                            autocomplete="new-password"
                             placeholder="Enter your password"
                         />
                         <span class="error-message"></span>
@@ -55,6 +59,7 @@
                             type="password"
                             id="confirm-password"
                             name="confirm_password"
+                            autocomplete="new-password"
                             placeholder="Confirm password"
                         />
                         <span class="error-message"></span>

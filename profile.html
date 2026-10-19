@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Profile — Student Hub</title>
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>"
+        />
+        <link rel="stylesheet" href="css/dashboard.css" />
+    </head>
+    <body>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            ☰
+        </button>
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <a href="home.html" class="brand">🎓 Student Hub</a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <p class="nav-section-label">Main</p>
+                    <a href="home.html" class="nav-link">🏠 Home</a>
+                    <a href="announcements.html" class="nav-link"
+                        >📢 Announcements</a
+                    >
+                    <a
+                        href="coming-soon.html?feature=timetable"
+                        class="nav-link"
+                        >📅 Timetable</a
+                    >
+                    <a href="assignments.html" class="nav-link">📝 Deadlines</a>
+                    <a
+                        href="coming-soon.html?feature=materials"
+                        class="nav-link"
+                        >📚 Materials</a
+                    >
+                    <a href="coming-soon.html?feature=grades" class="nav-link"
+                        >📊 Grades</a
+                    >
+                </div>
+
+                <div class="nav-section">
+                    <p class="nav-section-label">Admin</p>
+                    <a href="coming-soon.html?feature=fees" class="nav-link"
+                        >💰 Fees</a
+                    >
+                    <a
+                        href="coming-soon.html?feature=registration"
+                        class="nav-link"
+                        >📝 Registration</a
+                    >
+                </div>
+
+                <div class="nav-section">
+                    <p class="nav-section-label">Social</p>
+                    <a href="coming-soon.html?feature=messages" class="nav-link"
+                        >💬 Messages</a
+                    >
+                    <a
+                        href="coming-soon.html?feature=study-groups"
+                        class="nav-link"
+                        >👥 Study Groups</a
+                    >
+                    <a
+                        href="coming-soon.html?feature=voice-rooms"
+                        class="nav-link"
+                        >🎙️ Voice Rooms</a
+                    >
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="profile.html" class="user-info user-info-link">
+                    <div class="user-avatar" id="userAvatar">?</div>
+                    <div class="user-details">
+                        <p class="user-name" id="userName">Student</p>
+                        <span class="logout-link">View profile</span>
+                    </div>
+                </a>
+                <button id="logoutBtn" class="logout-link logout-btn">
+                    Log out
+                </button>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="content-header">
+                <div>
+                    <h1>Profile Settings</h1>
+                    <p class="content-subtitle">Manage your account details</p>
+                </div>
+            </header>
+
+            <!-- Account Info & Avatar -->
+            <div class="card" style="max-width: 600px; margin-bottom: 1.5rem">
+                <div class="card-header">
+                    <span class="card-icon">👤</span>
+                    <h2 class="card-title">Account</h2>
+                </div>
+
+                <div class="avatar-section">
+                    <div class="avatar-preview" id="avatarPreview">
+                        <span class="avatar-letter" id="avatarLetter">?</span>
+                        <img id="avatarImage" alt="" hidden />
+                    </div>
+                    <div class="avatar-controls">
+                        <input
+                            type="file"
+                            id="avatarInput"
+                            accept="image/jpeg,image/png,image/webp"
+                            hidden
+                        />
+                        <button
+                            type="button"
+                            id="chooseAvatarBtn"
+                            class="btn-primary"
+                        >
+                            Choose picture
+                        </button>
+                        <p class="avatar-hint">JPEG, PNG, or WebP · max 2 MB</p>
+                    </div>
+                </div>
+
+                <div class="profile-info">
+                    <div class="profile-row">
+                        <span class="profile-label">User ID</span>
+                        <span class="profile-value" id="profileId">—</span>
+                    </div>
+                    <div class="profile-row">
+                        <span class="profile-label">Username</span>
+                        <span class="profile-value" id="profileUsername"
+                            >—</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Username Form -->
+            <div class="card" style="max-width: 600px; margin-bottom: 1.5rem">
+                <div class="card-header">
+                    <span class="card-icon">✏️</span>
+                    <h2 class="card-title">Change Username</h2>
+                </div>
+                <form id="usernameForm" class="announce-form">
+                    <input
+                        type="text"
+                        id="newUsername"
+                        class="ann-input"
+                        placeholder="New username"
+                        minlength="3"
+                        maxlength="30"
+                        required
+                    />
+                    <div class="ann-form-actions">
+                        <button type="submit" class="btn-primary">
+                            Update Username
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Password Form -->
+            <div class="card" style="max-width: 600px">
+                <div class="card-header">
+                    <span class="card-icon">🔒</span>
+                    <h2 class="card-title">Change Password</h2>
+                </div>
+                <form id="passwordForm" class="announce-form">
+                    <input
+                        type="password"
+                        id="currentPassword"
+                        class="ann-input"
+                        placeholder="Current password"
+                        required
+                    />
+                    <input
+                        type="password"
+                        id="newPassword"
+                        class="ann-input"
+                        placeholder="New password (min 8 characters)"
+                        minlength="8"
+                        required
+                    />
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        class="ann-input"
+                        placeholder="Confirm new password"
+                        minlength="8"
+                        required
+                    />
+                    <div class="ann-form-actions">
+                        <button type="submit" class="btn-primary">
+                            Update Password
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div
+                id="profileMessage"
+                class="form-message"
+                hidden
+                style="max-width: 600px; margin-top: 1rem"
+            ></div>
+        </main>
+
+        <script src="js/dashboard.js"></script>
+        <script src="js/profile.js"></script>
+    </body>
+</html>

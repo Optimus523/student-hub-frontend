@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Announcements — Student Hub</title>
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>"
+        />
+        <link rel="stylesheet" href="css/dashboard.css" />
+    </head>
+    <body>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            ☰
+        </button>
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <a href="home.html" class="brand">🎓 Student Hub</a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <p class="nav-section-label">Main</p>
+                    <a href="home.html" class="nav-link">🏠 Home</a>
+                    <a href="announcements.html" class="nav-link active"
+                        >📢 Announcements</a
+                    >
+                    <a
+                        href="coming-soon.html?feature=timetable"
+                        class="nav-link"
+                        >📅 Timetable</a
+                    >
+                    <a href="assignments.html" class="nav-link">📝 Deadlines</a>
+                    <a
+                        href="coming-soon.html?feature=materials"
+                        class="nav-link"
+                        >📚 Materials</a
+                    >
+                    <a href="coming-soon.html?feature=grades" class="nav-link"
+                        >📊 Grades</a
+                    >
+                </div>
+
+                <div class="nav-section">
+                    <p class="nav-section-label">Admin</p>
+                    <a href="coming-soon.html?feature=fees" class="nav-link"
+                        >💰 Fees</a
+                    >
+                    <a
+                        href="coming-soon.html?feature=registration"
+                        class="nav-link"
+                        >📝 Registration</a
+                    >
+                </div>
+
+                <div class="nav-section">
+                    <p class="nav-section-label">Social</p>
+                    <a href="coming-soon.html?feature=messages" class="nav-link"
+                        >💬 Messages</a
+                    >
+                    <a
+                        href="coming-soon.html?feature=study-groups"
+                        class="nav-link"
+                        >👥 Study Groups</a
+                    >
+                    <a
+                        href="coming-soon.html?feature=voice-rooms"
+                        class="nav-link"
+                        >🎙️ Voice Rooms</a
+                    >
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="profile.html" class="user-info user-info-link">
+                    <div class="user-avatar" id="userAvatar">?</div>
+                    <div class="user-details">
+                        <p class="user-name" id="userName">Student</p>
+                        <span class="logout-link">View profile</span>
+                    </div>
+                </a>
+                <button id="logoutBtn" class="logout-link logout-btn">
+                    Log out
+                </button>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="content-header">
+                <div>
+                    <h1>Campus Announcements</h1>
+                    <p class="content-subtitle" id="todayDate">
+                        Stay up to date with the latest news
+                    </p>
+                </div>
+            </header>
+
+            <div class="card" style="margin-bottom: 1.5rem">
+                <div class="card-header">
+                    <span class="card-icon">✍️</span>
+                    <h2 class="card-title">Post an Announcement</h2>
+                </div>
+                <form id="createAnnouncementForm" class="announce-form">
+                    <input
+                        type="text"
+                        id="annTitle"
+                        class="ann-input"
+                        placeholder="Title (e.g. Exam timetable released)"
+                        required
+                    />
+                    <textarea
+                        id="annBody"
+                        class="ann-input"
+                        placeholder="Write your announcement here..."
+                        required
+                        rows="3"
+                    ></textarea>
+                    <div class="ann-form-actions">
+                        <button type="submit" class="btn-primary">
+                            Post Announcement
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card card-wide">
+                <div class="card-header">
+                    <span class="card-icon">📢</span>
+                    <h2 class="card-title">Recent Announcements</h2>
+                </div>
+                <ul class="announcements" id="announcementsFeed">
+                    <li
+                        class="announcement"
+                        style="color: #6b7280; font-size: 0.9rem"
+                    >
+                        Loading announcements...
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <script src="js/dashboard.js"></script>
+    </body>
+</html>

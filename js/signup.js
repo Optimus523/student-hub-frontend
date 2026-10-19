@@ -26,6 +26,13 @@ form.addEventListener("submit", function (event) {
         return;
     }
     async function handleSignup() {
+        const submitButton = document.querySelector("button[type='submit']");
+        const originalLabel = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = "Creating account...";
+
+        let redirecting = false;
+
         try {
             const response = await fetch(
                 `http://${window.location.hostname}:8000/users/`,
@@ -49,10 +56,7 @@ form.addEventListener("submit", function (event) {
                 messageEl.classList.add("success");
                 messageEl.hidden = false;
 
-                const submitButton = document.querySelector(
-                    "button[type='submit']",
-                );
-                submitButton.disabled = true;
+                redirecting = true;
                 setTimeout(() => {
                     window.location.href = "login.html?signup=success";
                 }, 1500);
@@ -68,6 +72,11 @@ form.addEventListener("submit", function (event) {
             }
         } catch (error) {
             console.error("Network error:", error);
+        } finally {
+            if (!redirecting) {
+                submitButton.disabled = false;
+                submitButton.textContent = originalLabel;
+            }
         }
     }
     handleSignup();
